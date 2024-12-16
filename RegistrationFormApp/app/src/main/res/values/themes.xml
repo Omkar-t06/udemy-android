@@ -8,5 +8,5 @@
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
-    <!--    <style name="Theme.RegistrationFormApp" parent="Base.Theme.RegistrationFormApp" />-->
+    <style name="Theme.RegistrationFormApp" parent="Base.Theme.RegistrationFormApp" />
 </resources>
