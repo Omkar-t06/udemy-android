@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupSpinner() {
         val titles = arrayOf("Miss", "Mrs", "Ms", "Mr", "Mx", "Dr", "Prof")
-        val titlesAdapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, titles)
+        val titlesAdapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, titles)
         binding.spinnerTitle.adapter = titlesAdapter
     }
 
@@ -49,6 +50,8 @@ class MainActivity : AppCompatActivity() {
             binding.editTextPhoneNo.text.toString(),
             binding.editTextPassword.text.toString()
         )
-        val intent = Intent()
+        val intent = Intent(this, SummaryActivity::class.java)
+        intent.putExtra("user", user)
+        startActivity(intent)
     }
 }
