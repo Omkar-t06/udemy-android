@@ -142,14 +142,14 @@
                 android:background="@color/light_gray" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_half_marathon"
+                android:id="@+id/container_best_average_speed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:padding="12dp">
 
                 <TextView
-                    android:id="@+id/text_view_half_marathon_heading"
+                    android:id="@+id/text_view_best_average_speed_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/best_average_speed_heading"
@@ -159,7 +159,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/text_view_half_marathon_value"
+                    android:id="@+id/text_view_best_average_speed_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
@@ -176,7 +176,7 @@
                     android:fontFamily="sans-serif-light"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_view_half_marathon_value"
+                    app:layout_constraintTop_toBottomOf="@id/text_view_best_average_speed_value"
                     tools:text="22/12/2024" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
