@@ -1,28 +1,24 @@
-package com.omkar.recordkeeper
+package com.omkar.recordkeeper.cycling
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.omkar.recordkeeper.databinding.ActivityEditRunningRecordBinding
+import com.omkar.recordkeeper.R
 
-class EditRunningRecordActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityEditRunningRecordBinding
-
+class EditCyclingRecordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityEditRunningRecordBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_edit_cycling_record)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val distance = intent.getStringExtra("Distance")
-        title = "$distance Record"
+        val record = intent.getStringExtra("Record")
+        title = "$record Record"
     }
 }

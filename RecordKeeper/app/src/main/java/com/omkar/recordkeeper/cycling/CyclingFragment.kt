@@ -1,4 +1,4 @@
-package com.omkar.recordkeeper
+package com.omkar.recordkeeper.cycling
 
 import android.content.Intent
 import android.os.Bundle
