@@ -21,7 +21,10 @@ class EditRecordActivity : AppCompatActivity() {
 
     private val screenData by lazy {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getSerializableExtra(INTENT_EXTRA_SCREEN_DATA, ScreenData::class.java) as ScreenData
+            intent.getSerializableExtra(
+                INTENT_EXTRA_SCREEN_DATA,
+                ScreenData::class.java
+            ) as ScreenData
         } else {
             @Suppress("DEPRECATION")
             intent.getSerializableExtra(INTENT_EXTRA_SCREEN_DATA) as ScreenData
@@ -90,8 +93,8 @@ class EditRecordActivity : AppCompatActivity() {
 
     private fun clearRecord() {
         runningPreferences.edit {
-            remove("${screenData.record} record")
-            remove("${screenData.record} date")
+            remove("${screenData.record} $SHARED_PREFERENCE_RECORD_KEY")
+            remove("${screenData.record} $SHARED_PREFERENCE_DATE_KEY")
         }
     }
 
@@ -100,4 +103,9 @@ class EditRecordActivity : AppCompatActivity() {
         val sharedPreferencesName: String,
         val recordFieldHint: String
     ) : Serializable
+
+    companion object {
+        const val SHARED_PREFERENCE_RECORD_KEY = "record"
+        const val SHARED_PREFERENCE_DATE_KEY = "date"
+    }
 }
