@@ -1,5 +1,6 @@
 package com.omkar.recordkeeper.running
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.omkar.recordkeeper.databinding.FragmentRunningBinding
+import com.omkar.recordkeeper.editRecords.EditRecordActivity
 
 class RunningFragment : Fragment() {
 
@@ -27,6 +29,11 @@ class RunningFragment : Fragment() {
         setupClickListener()
     }
 
+    override fun onResume() {
+        super.onResume()
+        displayRecord()
+    }
+
     private fun setupClickListener() {
         binding.container5km.setOnClickListener { launchRunningRecordScreen("5km") }
         binding.container10km.setOnClickListener { launchRunningRecordScreen("10km") }
@@ -34,9 +41,25 @@ class RunningFragment : Fragment() {
         binding.containerMarathon.setOnClickListener { launchRunningRecordScreen("Marathon") }
     }
 
+    private fun displayRecord() {
+        val runningPreferences =
+            requireContext().getSharedPreferences("running", Context.MODE_PRIVATE)
+
+        binding.textView5kmValue.text = runningPreferences.getString("5km record", null)
+        binding.textView5kmDate.text = runningPreferences.getString("5km date", null)
+        binding.textView10kmValue.text = runningPreferences.getString("10km record", null)
+        binding.textView10kmDate.text = runningPreferences.getString("10km date", null)
+        binding.textViewHalfMarathonValue.text =
+            runningPreferences.getString("Half Marathon record", null)
+        binding.textViewHalfMarathonDate.text =
+            runningPreferences.getString("Half Marathon date", null)
+        binding.textViewMarathonValue.text = runningPreferences.getString("Marathon record", null)
+        binding.textViewMarathonDate.text = runningPreferences.getString("Marathon date", null)
+    }
+
     private fun launchRunningRecordScreen(distance: String) {
-        val intent = Intent(context, EditRunningRecordActivity::class.java)
-        intent.putExtra("Distance", distance)
+        val intent = Intent(context, EditRecordActivity::class.java)
+        intent.putExtra("screen_data", EditRecordActivity.ScreenData(distance, "running", "Time"))
         startActivity(intent)
     }
 }
