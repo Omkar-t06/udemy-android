@@ -18,6 +18,7 @@
             android:label="Edit Record"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:launchMode="singleTop"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
