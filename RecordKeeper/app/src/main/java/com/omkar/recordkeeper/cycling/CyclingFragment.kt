@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.omkar.recordkeeper.CYCLING
 import com.omkar.recordkeeper.databinding.FragmentCyclingBinding
 import com.omkar.recordkeeper.editRecords.EditRecordActivity
+import com.omkar.recordkeeper.editRecords.INTENT_EXTRA_SCREEN_DATA
 
 class CyclingFragment : Fragment() {
 
@@ -57,7 +59,9 @@ class CyclingFragment : Fragment() {
 
     private fun displayRecord() {
         val cyclingPreferences =
-            requireContext().getSharedPreferences("cycling", Context.MODE_PRIVATE)
+            requireContext().getSharedPreferences(
+                CYCLING, Context.MODE_PRIVATE
+            )
 
         binding.textViewLongestRideValue.text =
             cyclingPreferences.getString("Longest Ride record", null)
@@ -76,8 +80,8 @@ class CyclingFragment : Fragment() {
     private fun launchRunningRecordScreen(record: String, recordFieldHint: String) {
         val intent = Intent(context, EditRecordActivity::class.java)
         intent.putExtra(
-            "screen_data",
-            EditRecordActivity.ScreenData(record, "cycling", recordFieldHint)
+            INTENT_EXTRA_SCREEN_DATA,
+            EditRecordActivity.ScreenData(record, CYCLING, recordFieldHint)
         )
         startActivity(intent)
     }
