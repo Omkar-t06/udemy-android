@@ -22,5 +22,10 @@ class PasswordFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        displayValue()
+    }
+
+    private fun displayValue() {
+
     }
 }

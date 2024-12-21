@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Reminder</string>
+    <string name="wifi_icon_description">Wifi Icon</string>
+    <string name="wifi_password_heading">Wifi Password</string>
+    <string name="biometric_icon_description">Biometrices Icon</string>
+    <string name="password_icon_description">Password Icon</string>
+    <string name="laptop_pin_heading">Laptop Pin</string>
+    <string name="biometric_id_heading">Biometric ID</string>
+    <string name="code_icon_description">Code Icon</string>
+    <string name="dev_day_heading">Dev Day</string>
+    <string name="beverage_icon_description">Beverage Icon</string>
+    <string name="fasting_day_heading">Fasting Day</string>
+    <string name="upcoming_birthday_heading">Upcoming Birthday</string>
 </resources>
