@@ -12,6 +12,7 @@
         android:padding="24dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_dev"
             style="@style/Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -54,6 +55,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_fasting_day"
             style="@style/Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,6 +99,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_upcoming_birthday"
             style="@style/Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -129,7 +132,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/text_view_biometric_no_value"
+                    android:id="@+id/text_view_upcoming_birthday_value"
                     style="@style/Text.Value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

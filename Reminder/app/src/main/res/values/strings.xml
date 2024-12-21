@@ -11,4 +11,5 @@
     <string name="beverage_icon_description">Beverage Icon</string>
     <string name="fasting_day_heading">Fasting Day</string>
     <string name="upcoming_birthday_heading">Upcoming Birthday</string>
+    <string name="value_hint">Value</string>
 </resources>
